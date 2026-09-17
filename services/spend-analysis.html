@@ -18,7 +18,22 @@
 .limits li{margin:10px 0;padding-left:28px;position:relative;line-height:1.55}
 .limits li:before{content:"";position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:50%;background:#7d8f57}
 .scope{max-width:840px;padding:18px 0 40px}
-.scope h2{font-size:27px;letter-spacing:-.8px;margin:40px 0 12px}<main id="main" class="wrap">
+.scope h2{font-size:27px;letter-spacing:-.8px;margin:40px 0 12px}
+.scope p{font-size:15px;max-width:720px}
+.check{list-style:none;margin:14px 0;padding:0}
+.check li{margin:10px 0;padding-left:30px;position:relative;font-size:15px;max-width:720px;line-height:1.6}
+.check li:before{content:"✓";position:absolute;left:2px;color:#6c8153;font-weight:700}
+.cross{list-style:none;margin:14px 0;padding:0}
+.cross li{margin:10px 0;padding-left:30px;position:relative;font-size:15px;max-width:720px;line-height:1.6;color:var(--muted)}
+.cross li:before{content:"×";position:absolute;left:4px;color:#a4553f;font-weight:700}
+.terms-link{margin-top:46px;padding-top:24px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+@media(max-width:680px){.page-hero{padding:44px 0 6px}.limits{padding:22px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav-shell wrap"><nav class="nav glass" aria-label="Main navigation"><a class="brand" href="/" aria-label="Louis Street Ventures home"><span class="mark" aria-hidden="true">L</span><span>Louis Street<br>Ventures</span></a><div class="nav-links"><a href="/#services">Services</a><a href="/#testimonials">Client work</a><a href="/#process">How it works</a><a class="button" href="/intake.html">Start intake <span aria-hidden="true">↗</span></a></div><details class="mobile-menu"><summary>Menu</summary><div class="mobile-links"><a href="/#services">Services</a><a href="/#testimonials">Client work</a><a href="/#process">How it works</a><a href="/intake.html">Start intake</a></div></details></nav></header>
+<main id="main" class="wrap">
 <div class="page-hero">
 <div class="eyebrow"><span class="dot"></span> Fixed-price service</div>
 <h1>Supplier Spend Analysis</h1>
@@ -37,7 +52,30 @@
 </div>
 <div class="scope">
 <h2>Eligible inputs and limits</h2>
-<ul class="check"><h2>Deliverables</h2>
+<ul class="check">
+<li>Data for one legal entity.</li>
+<li>One reporting currency, already present in the data. Currency conversion is not included.</li>
+<li>Up to 12 consecutive months of transactions.</li>
+<li>Up to 25,000 transaction rows.</li>
+<li>Up to 250 distinct supplier names before normalization.</li>
+<li>Up to three CSV or XLSX files with matching column structures.</li>
+<li>One optional supplier master file with up to 250 records.</li>
+<li>Required fields: supplier name, transaction or invoice date, and amount. Invoice number is also required for invoice-level checks.</li>
+<li>Either invoice data or payment data. Reconciling the two is excluded.</li>
+<li>Amounts must already use consistent tax and credit treatment.</li>
+</ul>
+<h2>Included work</h2>
+<ul class="check">
+<li>Normalize supplier names, dates, and category labels.</li>
+<li>Build up to 15 mutually exclusive top-level categories with an agreed mapping, with one primary category per supplier.</li>
+<li>Reconcile output totals to the submitted files and document any exclusions.</li>
+<li>Provide views by supplier, category, and month.</li>
+<li>Segment spend into three tiers using an agreed rule (default: cumulative 80/15/5 bands).</li>
+<li>Analyze concentration, fragmented spend, and monthly changes.</li>
+<li>Run duplicate-invoice checks where the fields exist.</li>
+<li>Individually review the top 20 suppliers.</li>
+</ul>
+<h2>Deliverables</h2>
 <ul class="check">
 <li>Excel workbook with cleaned transactions, the category mapping, summary views, and segmentation.</li>
 <li>Written report of up to six pages.</li>
@@ -69,42 +107,3 @@
 <footer class="wrap footer"><span class="footer-brand">Louis Street Ventures</span><span>© 2026 Louis Street Ventures · <a href="/service-terms.html">General Service Terms</a> · <a href="/">Back to home ↑</a></span></footer>
 </body>
 </html>
-
-<li>Data for one legal entity.</li>
-<li>One reporting currency, already present in the data. Currency conversion is not included.</li>
-<li>Up to 12 consecutive months of transactions.</li>
-<li>Up to 25,000 transaction rows.</li>
-<li>Up to 250 distinct supplier names before normalization.</li>
-<li>Up to three CSV or XLSX files with matching column structures.</li>
-<li>One optional supplier master file with up to 250 records.</li>
-<li>Required fields: supplier name, transaction or invoice date, and amount. Invoice number is also required for invoice-level checks.</li>
-<li>Either invoice data or payment data. Reconciling the two is excluded.</li>
-<li>Amounts must already use consistent tax and credit treatment.</li>
-</ul>
-<h2>Included work</h2>
-<ul class="check">
-<li>Normalize supplier names, dates, and category labels.</li>
-<li>Build up to 15 mutually exclusive top-level categories with an agreed mapping, with one primary category per supplier.</li>
-<li>Reconcile output totals to the submitted files and document any exclusions.</li>
-<li>Provide views by supplier, category, and month.</li>
-<li>Segment spend into three tiers using an agreed rule (default: cumulative 80/15/5 bands).</li>
-<li>Analyze concentration, fragmented spend, and monthly changes.</li>
-<li>Run duplicate-invoice checks where the fields exist.</li>
-<li>Individually review the top 20 suppliers.</li>
-</ul>
-
-.scope p{font-size:15px;max-width:720px}
-.scope .intro{color:var(--muted)}
-.check{list-style:none;margin:14px 0;padding:0}
-.check li{margin:10px 0;padding-left:30px;position:relative;font-size:15px;max-width:720px;line-height:1.6}
-.check li:before{content:"✓";position:absolute;left:2px;color:#6c8153;font-weight:700}
-.cross{list-style:none;margin:14px 0;padding:0}
-.cross li{margin:10px 0;padding-left:30px;position:relative;font-size:15px;max-width:720px;line-height:1.6;color:var(--muted)}
-.cross li:before{content:"×";position:absolute;left:4px;color:#a4553f;font-weight:700}
-.terms-link{margin-top:46px;padding-top:24px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
-@media(max-width:680px){.page-hero{padding:44px 0 6px}.limits{padding:22px}}
-</style>
-</head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="nav-shell wrap"><nav class="nav glass" aria-label="Main navigation"><a class="brand" href="/" aria-label="Louis Street Ventures home"><span class="mark" aria-hidden="true">L</span><span>Louis Street<br>Ventures</span></a><div class="nav-links"><a href="/#services">Services</a><a href="/#testimonials">Client work</a><a href="/#process">How it works</a><a class="button" href="/intake.html">Start intake <span aria-hidden="true">↗</span></a></div><details class="mobile-menu"><summary>Menu</summary><div class="mobile-links"><a href="/#services">Services</a><a href="/#testimonials">Client work</a><a href="/#process">How it works</a><a href="/intake.html">Start intake</a></div></details></nav></header>
