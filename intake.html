@@ -46,7 +46,7 @@
 <div class="field"><label for="business_name">Business name</label><input type="text" id="business_name" data-label="Business name" required></div>
 <div class="field"><label for="desired_outcome">Desired outcome</label><textarea id="desired_outcome" data-label="Desired outcome" required></textarea><p class="hint">What should be true once this project is done?</p></div>
 <div id="service-fields"></div>
-<div class="check-row"><input type="checkbox" id="scope_ack" data-label="Scope acknowledgement" required><label for="scope_ack">I have read the <a id="scope-link" href="/services/spend-analysis.html" target="_blank" rel="noopener">full scope for this service</a> and <a href="/terms/2026-09-17-v2.html" target="_blank" rel="noopener">General Service Terms Version 2 (2026-09-17)</a>. I understand the five-business-day review period, one in-scope revision round, and no ongoing support after completion. This is an inquiry; we will confirm and accept the exact order separately before payment.</label></div>
+<div class="check-row"><input type="checkbox" id="scope_ack" data-label="Scope acknowledgement" required><label for="scope_ack">I have read the <a id="scope-link" href="/services/spend-analysis.html" target="_blank" rel="noopener">full scope for this service</a> and <a href="/terms/2026-09-17-v3.html" target="_blank" rel="noopener">General Service Terms Version 3 (2026-09-17)</a>. I understand that delivery is final with no included revision rounds. Only errors against the agreed scope reported within five business days qualify for the correction-or-refund remedy. Preference changes and new requests require a separate paid order; ongoing support is not included. This is an inquiry; we will confirm and accept the exact order separately before payment.</label></div>
 <p class="secure-note">Do not attach sensitive files to this email. After we review your intake, we will arrange an appropriate transfer method if files are needed. Do not send passwords, payment-card data, Social Security numbers, or protected health information.</p>
 <div><button class="button" type="submit">Compose intake email <span>↗</span></button></div>
 <p class="form-status" id="form-status" role="status"></p>
@@ -101,8 +101,8 @@ else if(f.tagName==='SELECT'){v=f.options[f.selectedIndex].text;}
 else{v=(f.value||'').trim();}
 if(!v||v==='Select')continue;
 L.push(f.getAttribute('data-label')+': '+v);}
-L.push('Terms reviewed: Version 2 (2026-09-17)');
-L.push('Terms URL: https://louisstreetventures.github.io/terms/2026-09-17-v2.html');
+L.push('Terms reviewed: Version 3 (2026-09-17)');
+L.push('Terms URL: https://louisstreetventures.github.io/terms/2026-09-17-v3.html');
 L.push('Scope URL: https://louisstreetventures.github.io/services/'+slug+'.html');
 L.push('This is an inquiry, not acceptance of a final order or authorization to begin work.');
 var sub='Intake \u2014 '+sn+' \u2014 '+biz;

@@ -50,7 +50,7 @@ function updateService() {
   document.getElementById('brief-hint').textContent = option.dataset.prompt;
   summary.hidden = !option.dataset.price;
   summary.textContent = option.dataset.price
-    ? `${option.dataset.price} · ${option.dataset.days} · ${option.dataset.revisions} revision ${option.dataset.revisions === '1' ? 'round' : 'rounds'}`
+    ? `${option.dataset.price} · ${option.dataset.days} · Error corrections only; no revisions`
     : '';
   draftStatus.textContent = '';
   manualCopy.hidden = true;
@@ -109,3 +109,4 @@ updateService();
 document.getElementById('copy-draft').hidden = false;
 form.hidden = false;
 document.querySelector('.form-fallback').hidden = true;
+
