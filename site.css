@@ -49,3 +49,6 @@
 
 /* Clip decoration without creating a nested scroll container around the form. */
 @supports (overflow:clip){.contact{overflow:clip}}
+
+.contact>div{min-width:0}
+.form select,.form textarea{min-width:0;max-width:100%}
