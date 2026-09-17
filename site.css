@@ -46,3 +46,6 @@
 .form-actions{flex-direction:column}.form-actions .button{justify-content:center}
 }
 
+
+/* Clip decoration without creating a nested scroll container around the form. */
+@supports (overflow:clip){.contact{overflow:clip}}
