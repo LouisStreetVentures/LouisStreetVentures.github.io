@@ -39,15 +39,15 @@
 <p class="lede">Choose a service and answer the questions for it. Your answers are composed into an email draft that you review and send.</p>
 </div>
 <div class="intake">
-<form id="intake-form" novalidate>
+<form id="intake-form">
 <div class="field"><label for="service">Service</label><select id="service" data-label="Service"><option value="spend-analysis">Supplier Spend Analysis ($2,490)</option><option value="dashboard-automation">Dashboard + Automation Package ($1,490)</option><option value="spreadsheet-dashboard">Spreadsheet Dashboard ($590)</option><option value="contract-summaries">Contract Summary Sheets ($690)</option><option value="research-brief">Deep Research Brief ($590)</option><option value="lead-list">Lead List Building ($390)</option><option value="cleanup">Spreadsheet Cleanup ($190)</option></select></div>
 <div class="field"><label for="full_name">Full name</label><input type="text" id="full_name" data-label="Full name" required></div>
 <div class="field"><label for="email">Email</label><input type="email" id="email" data-label="Email" required></div>
 <div class="field"><label for="business_name">Business name</label><input type="text" id="business_name" data-label="Business name" required></div>
 <div class="field"><label for="desired_outcome">Desired outcome</label><textarea id="desired_outcome" data-label="Desired outcome" required></textarea><p class="hint">What should be true once this project is done?</p></div>
 <div id="service-fields"></div>
-<div class="check-row"><input type="checkbox" id="scope_ack" data-label="Scope acknowledgement" required><label for="scope_ack">I have read the <a id="scope-link" href="/services/spend-analysis.html">full scope for this service</a> and the <a href="/service-terms.html">general service terms</a>, and my order fits within them.</label></div>
-<p class="secure-note">Do not attach sensitive files to this email. After I review your intake, I will send a secure upload link if files are needed.</p>
+<div class="check-row"><input type="checkbox" id="scope_ack" data-label="Scope acknowledgement" required><label for="scope_ack">I have read the <a id="scope-link" href="/services/spend-analysis.html" target="_blank" rel="noopener">full scope for this service</a> and <a href="/terms/2026-09-17-v2.html" target="_blank" rel="noopener">General Service Terms Version 2 (2026-09-17)</a>. I understand the five-business-day review period, one in-scope revision round, and no ongoing support after completion. This is an inquiry; we will confirm and accept the exact order separately before payment.</label></div>
+<p class="secure-note">Do not attach sensitive files to this email. After we review your intake, we will arrange an appropriate transfer method if files are needed. Do not send passwords, payment-card data, Social Security numbers, or protected health information.</p>
 <div><button class="button" type="submit">Compose intake email <span>↗</span></button></div>
 <p class="form-status" id="form-status" role="status"></p>
 </form>
@@ -66,6 +66,7 @@ var FD={
 'cleanup':[['Data rows (max 500)','n','data_rows','Data rows',500],['Columns (max 20)','n','columns_cu','Columns',20],['Format','s','format','Format',['CSV','XLSX','Google Sheets']],['Single flat table','s','single_flat_table','Single flat table',['Yes','No']]]
 };
 function BF(slug){
+document.getElementById('scope_ack').checked=false;
 var c=document.getElementById('service-fields');c.innerHTML='';
 var d=FD[slug],fs=document.createElement('fieldset');fs.className='svc';
 var lg=document.createElement('legend');lg.textContent=SN[slug]+' details';fs.appendChild(lg);
@@ -90,6 +91,7 @@ try{var qp=new URLSearchParams(location.search).get('service');if(qp&&SN[qp]){SS
 BF(SS.value);
 document.getElementById('intake-form').addEventListener('submit',function(ev){
 ev.preventDefault();
+if(!this.reportValidity())return;
 var slug=SS.value,sn=SN[slug],biz=document.getElementById('business_name').value.trim();
 var L=[],FL=this.querySelectorAll('[data-label]');
 for(var i=0;i<FL.length;i++){var f=FL[i],v='';
@@ -99,6 +101,10 @@ else if(f.tagName==='SELECT'){v=f.options[f.selectedIndex].text;}
 else{v=(f.value||'').trim();}
 if(!v||v==='Select')continue;
 L.push(f.getAttribute('data-label')+': '+v);}
+L.push('Terms reviewed: Version 2 (2026-09-17)');
+L.push('Terms URL: https://louisstreetventures.github.io/terms/2026-09-17-v2.html');
+L.push('Scope URL: https://louisstreetventures.github.io/services/'+slug+'.html');
+L.push('This is an inquiry, not acceptance of a final order or authorization to begin work.');
 var sub='Intake \u2014 '+sn+' \u2014 '+biz;
 var href='mailto:louisstreetventures@proton.me?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent(L.join('\n'));
 document.getElementById('form-status').textContent='Opening your email app with the intake draft. Review the message and send it when ready.';
